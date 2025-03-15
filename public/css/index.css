@@ -1,0 +1,28 @@
+.main-block-container {
+    display: block;
+    flex: 6;
+}
+.side-block-container {
+    display: block;
+    flex: 4;
+}
+.flex-container {
+    display: flex;
+}
+.comment {
+    background: #a0daf4;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    list-style-type: none;
+}
+.comment-details {
+    display: block;
+    text-align: right;
+}
+
+@media only screen and (max-width: 768px) {
+    .flex-container {
+        display: block;
+    }
+}

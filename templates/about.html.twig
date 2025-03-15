@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>About CouBooks</h1>
+    <p>Welcome to CouBooks!</p>
+
+    <h2>Our Mission</h2>
+    <p>CouBooks is a demo project for a web technology course, showcasing how students can create a functional course book reservation platform.</p>
+
+    <h2>What We Offer</h2>
+    <ul>
+        <li>An easy way to browse and reserve course books.</li>
+        <li>Up-to-date information on required textbooks.</li>
+        <li>A demonstration of web development techniques.</li>
+    </ul>
+
+    <h2>How It Works</h2>
+    <p>Students can select their phase of study, choose the required books, and reserve them for pickup at a designated location.</p>
+
+    <h2>Get Involved</h2>
+    <p>This website is part of an educational project, and we're always looking for ways to improve. Feel free to leave feedback on our <a href="{{ path('feedback') }}">Feedback Page</a>.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have any questions, reach out via email at <a href="mailto:tuur.colignon@student.kuleuven.be">tuur.colignon@student.kuleuven.be</a>.</p>
+
+{% endblock %}

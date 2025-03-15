@@ -1,0 +1,92 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.course, .no-course {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.course {
+    cursor: pointer;
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-header h3 {
+    margin: 0;
+}
+
+.course-details {
+    display: none;
+    margin-top: 10px;
+}
+
+.course-details.open {
+    display: block;
+}
+
+.staff-name {
+    font-weight: bold;
+}
+
+.staff-email {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.books-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.book {
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.book:hover {
+    background-color: #efeeee;
+}
+.course:hover {
+    background-color: #f9f9f9;
+}
+
+.book-details {
+    display: none;
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.6;
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.book-details.open {
+    max-height: 500px;
+    display: block;
+}
+
+.book-details.error {
+    max-height: 500px;
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.book-details p {
+    margin: 0;
+}

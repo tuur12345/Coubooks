@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <link href="{{ asset('css/reservation.css') }}" rel="stylesheet"/>
+    <div class="progress-container">
+        <div class="progress-step">1</div>
+        <div class="progress-step">2</div>
+        <div class="progress-step">3</div>
+    </div>
+
+    {% if step == 1 %}
+    <section>
+        <h3>WHO ARE YOU</h3>
+        <p>Please provide some info about you, so we can search for the books you need...</p>
+        {{ form(form) }}
+    </section>
+    {% elseif step == 2 %}
+    <section>
+        <h3>WHAT BOOKS DO YOU NEED?</h3>
+        <p>Select the books you wish to order ...</p>
+        {{ form(form) }}
+    </section>
+    {% elseif step == 3 %}
+    <section>
+        <h3>YOU HAVE ORDERED...</h3>
+        <p>Below you find an overview of the books you have reserved. Once you confirm your reservation you can
+            pick them up at our KD and pay at the desk</p>
+        <ul>
+            {% for book in app.session.get('selected_books', []) %}
+                <li>{{ book }}</li>
+            {% endfor %}
+        </ul>
+        {{ form(form) }}
+    </section>
+    {% endif %}
+{% endblock %}

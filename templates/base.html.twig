@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coubooks</title>
+    <link href="{{ asset('css/base.css') }}" rel="stylesheet"/>
+</head>
+
+<body>
+<header>
+    <div class="head-block-container">
+        <h1>CouBooks</h1>
+        <h2 class="second-title">A Webtech demo site</h2>
+    </div>
+    <a class="url" href="{{ path('home') }}">Home</a>
+    <a class="url" href="{{ path('courses') }}">Courses</a>
+    <a class="url" href="{{ path('reservation') }}">Reservation</a>
+    <a class="url" href="{{ path('about') }}">About</a>
+</header>
+<main>
+    {% block content %}{% endblock %}
+</main>
+<footer>
+    <p>Copyright &copy; 2022 WebTech. KUL All Rights Reserved.
+        <span>
+                <a href="{{ path('privacy') }}">Privacy Policy</a>
+                |
+                <a href="{{ path('terms') }}">Terms of Use</a>
+            </span>
+    </p>
+</footer>
+</body>
+</html>

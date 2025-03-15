@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <link href="{{ asset('css/courses.css') }}" rel="stylesheet"/>
+    <script src="{{ asset('js/CourseDetailsListener.js') }}"></script>
+    <script src="{{ asset('js/BookDetailsListener.js') }}"></script>
+    <div>
+        <p>Below you can find an overview of all available courses.</p>
+        {{ form_start(form, { 'attr': {'id': 'course-form'} }) }}
+        {{ form_row(form.fase, {'label': false, 'attr': {'onchange': 'document.getElementById("course-form").submit();'} }) }}
+        {{ form_end(form) }}
+
+        <ul>
+            {% if not courses_list %}
+                <li class="no-course"><i>No courses available</i></li>
+            {% else %}
+                {% for course in courses_list %}
+                    <li class="course">
+                        <div class="course-header">
+                            <h3>{{ course.id }} : {{course.name }}</h3>
+                        </div>
+                        <div class="course-details">
+                            <p><strong>Fase:</strong> {{ course.fase }}</p>
+                            {% set staff = course.staff %}
+                            <p><strong>Instructor:</strong>
+                                <span class="staff-name">{{ staff.name }}</span>
+                                <a href="mailto: {{ staff.email }}" class="staff-email">({{ staff.email }})</a>
+                            </p>
+                            <h4>Books:</h4>
+                            {% set book_list = course.getBooks %}
+                            <ul class="books-list">
+                                {% if book_list|length == 0 %}
+                                    <li><i>No books available</i></li>
+                                {% else %}
+                                    {% for book in book_list %}
+                                        <li class="book" data-isbn="{{ book.isbn }}">
+                                            <b>{{ book.title }}</b>
+                                            (ISBN: {{ book.isbn }}) -
+                                            <i>{{ book.obliged ? "Obliged" : "Not Obliged" }}</i>
+                                            <div class="book-details"></div>
+                                        </li>
+                                    {% endfor %}
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+{% endblock %}

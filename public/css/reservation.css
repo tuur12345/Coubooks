@@ -1,0 +1,47 @@
+input[type=email], input[type=text] {
+    margin-left: 20px;
+    padding: 10px;
+}
+.check_user_msg {
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+}
+
+.progress-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+.progress-step {
+    width: 30px;
+    height: 30px;
+    background: #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.progress-step.active {
+    background: #1c7da6;
+    color: white;
+}
+
+.progress-step.completed {
+    background: #a0daf4;
+    color: white;
+}
+.books {
+    list-style-type: none;
+}
+.return-btn {
+    margin-left: -40px;
+}

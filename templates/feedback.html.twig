@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <link href="{{ asset('css/feedback.css') }}" rel="stylesheet"/>
+    <script src="{{ asset('js/Button.js') }}"></script>
+    <h3>Add Feedback...</h3>
+    {{ form_start(form, { 'attr': {'class': 'feedback-form'}} ) }}
+    {{ form_end(form) }}
+{% endblock %}

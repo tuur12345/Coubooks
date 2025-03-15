@@ -1,0 +1,36 @@
+.feedback-form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.feedback-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.feedback-form button {
+    background-color: #1c7da6;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.feedback-form button:hover {
+    background-color: #a0daf4;
+}
+
+.feedback-form button:disabled {
+    background-color: #cccccc;
+}
